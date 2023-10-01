@@ -8,8 +8,38 @@
     <artifactId>Pracownia2020-2021</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>jar</packaging>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId> <!-- Zmiana na maven-jar-plugin -->
+                <version>3.2.0</version> <!-- Wersja pluginu -->
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- Poprawienie ścieżki klasy głównej -->
+                            <mainClass>introduction.HelloWorld</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>
